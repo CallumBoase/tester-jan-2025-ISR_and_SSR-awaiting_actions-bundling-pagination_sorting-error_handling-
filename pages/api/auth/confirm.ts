@@ -28,10 +28,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (error) {
       console.error(error)
     } else {
-      console.log('no error in confirm.ts')
       next = stringOrFirstString(queryParams.next) || '/'
     }
   }
-  console.log('redirecting within confirm.ts')
   res.redirect(next)
 }

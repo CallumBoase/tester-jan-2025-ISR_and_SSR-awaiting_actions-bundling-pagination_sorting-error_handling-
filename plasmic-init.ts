@@ -3,8 +3,6 @@ import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
 import { 
   SupabaseProvider, 
   SupabaseProviderMeta,
-  // SupabaseProviderNew,
-  // SupabaseProviderNewMeta,
   SupabaseUserGlobalContext,
   SupabaseUserGlobalContextMeta,
   SupabaseUppyUploader,
