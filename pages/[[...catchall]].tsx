@@ -16,7 +16,7 @@ export default function PlasmicLoaderPage(props: {
   queryCache?: Record<string, unknown>;
 }) {
   const { plasmicData, queryCache } = props;
-  console.log('PlasmicLoaderPage queryCache', !!queryCache?.data);
+  console.log('PlasmicLoaderPage queryCache', JSON.stringify(queryCache));
   const router = useRouter();
   if (!plasmicData || plasmicData.entryCompMetas.length === 0) {
     return <Error statusCode={404} />;
@@ -56,7 +56,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       <PlasmicComponent component={pageMeta.displayName} />
     </PlasmicRootProvider>
   );
-  console.log('getStaticProps queryCache', queryCache?.data?.length);
+  console.log('getStaticProps queryCache', JSON.stringify(queryCache));
   // Use revalidate if you want incremental static regeneration
   return { props: { plasmicData, queryCache }, revalidate: 60 };
 }
